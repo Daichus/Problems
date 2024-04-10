@@ -40,6 +40,8 @@ public class Problems {
             System.out.println("Out of range");
             return;
         }
+        //以Arrays.sort方法將陣列中的元素依照大小排列以方便計算出現次數，以{1,2,2,1}為例，經過排列後呈現{1,1,2,2}的狀態，接著迴圈開始計算1出現的次數，如果下一個不是1，
+        //便檢查1出現的次數是不是比儲存在mostFrequency中的值大，如果是，將1出現的次數儲存到mostFrequency中，並將curremtFrequency重設為1以計算下一個數字的出現次數
         Arrays.sort(arr);
         int highestFrequencyNumber=arr[0];
         int currentFrequency=1,mostFrequency=0;
@@ -138,10 +140,12 @@ public class Problems {
             }
             System.out.println();
         }
+        //打印樹幹部分，(width-3)/2算出應打印的空格數，重複三次
         for(int j=0;j<3;j++) {
             for (int i = 0; i < (width - 3) / 2; i++) {
                 System.out.print(" ");
             }
+            //直接印出三個星號
             System.out.print("***\n");
         }
     }
@@ -150,7 +154,7 @@ public class Problems {
         int[] digitArr = new int[4];
         int code = sc.nextInt();
 
-
+        //以除以10的方式逐步取得每一個位的數字，並存到陣列
         for (int i = 3; i >= 0 && code > 0; i--) {
             digitArr[i] = ((code % 10) + 7) % 10;
             code /= 10;
@@ -173,7 +177,8 @@ public class Problems {
         char [] arr=sc.next().toCharArray();
         int j=arr.length-1;
 
-
+        //i負責作為從頭開始檢測的陣列指標，j為從尾部開始檢測的指標，j-1是為了防止超出陣列範圍的發生
+        //arr[i]假設i=0，代表arr的頭，arr[j]代表尾部
         for(int i=0;i<=j;i++){
             if(arr[i]!=arr[j]){
                 System.out.print("No\n");
@@ -204,7 +209,7 @@ public class Problems {
         int height=sc.nextInt()+1;
         int digit=1;
 
-
+        //每次打印一個數字前，計算它是幾位數。透過5減去位數計算要印出的空格數量
         for(int j=0;j<height;j++) {
             int temp=0;
             for (int i = j; i <=width+j; i++) {
@@ -217,7 +222,7 @@ public class Problems {
 
         }
     }
-    //第十一題的調用方法
+    //第十一題的調用方法,計算應印出的空格數
     static int countDigit(int i){
         int count=1;
         while(i/10>=1){
