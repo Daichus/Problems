@@ -13,22 +13,15 @@ public class Problems {
         int index=0;
         int sumOfEven=0,sumOfOdd=0;
 
-        while(index<10){
-            System.out.print("Enter a number(Integer only!):");
-            if(!sc.hasNextInt()){
-                sc.next();
-            }else{
-                arr[index]=sc.nextInt();
-                index++;
-            }
-
-        }
+         for(int i=0;i<arr.length;i++){
+             arr[i]=sc.nextInt();
+         }
         for(int i=0;i<arr.length;i++){
             if(i%2==0){sumOfEven+=arr[i];}
             else{sumOfOdd+=arr[i];}
         }
-        System.out.println("Sum of Even:"+sumOfEven);
-        System.out.println("Sum of Odd:"+sumOfOdd);
+        System.out.println(sumOfEven+","+sumOfOdd);
+
     }
 
     //第二題
@@ -204,7 +197,7 @@ public class Problems {
            System.out.println(a+"/"+b+"="+(a/b)+"..."+(a%b));
        }
    }
-   
+
    //第十一題
     public static void matrix(){
         int width=sc.nextInt();
