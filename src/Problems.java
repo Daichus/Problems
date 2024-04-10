@@ -155,7 +155,8 @@ public class Problems {
         int[] digitArr = new int[4];
         int code = sc.nextInt();
 
-        //以除以10的方式逐步取得每一個位的數字，並存到陣列
+        //以透過除以10的餘數的方式逐步取得每一個位的數字,以1234為例，第一次除10的餘數是4，接著將1234除以10變為123，再計算除10的餘數得到3，
+        //以此類推
         for (int i = 3; i >= 0 && code > 0; i--) {
             digitArr[i] = ((code % 10) + 7) % 10;
             code /= 10;
