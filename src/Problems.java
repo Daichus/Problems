@@ -67,11 +67,12 @@ public class Problems {
     }
     //第三題
     public static void searchConstellation(){
+        //將月與日直接合併轉為數字，1月30日就是1*100加上30
         String[] constellation=new String[]{"Aquarius","Pisces","Aries","Taurus","Gemini","Cancer","Leo","Virgo","Libra","Scorpio","Sagittarius","Capricorn"};
         int [][] daysOfMonth=new int[][]{{121,218},{219,320},{321,420},{421,521},{522,621},{622,722},{723,823},{824,923},{924,1023},{1024,1122},{1123,1221},{1222,1251}};
         int month=sc.nextInt(),day=sc.nextInt();
         int dayCombine=month*100+day;
-
+        //因為12月22~1月20是跨年度，因此直接將1月1日~1月20日的數字強制加上1131以便於比較
         if(dayCombine<=120){
             dayCombine+=1131;
         }
@@ -177,7 +178,7 @@ public class Problems {
         char [] arr=sc.next().toCharArray();
         int j=arr.length-1;
 
-        //i負責作為從頭開始檢測的陣列指標，j為從尾部開始檢測的指標，j-1是為了防止超出陣列範圍的發生
+        //i負責作為從頭開始檢測的陣列指標，j為從尾部開始檢測的指標，j設為陣列長度減1是為了防止超出陣列範圍的發生
         //arr[i]假設i=0，代表arr的頭，arr[j]代表尾部
         for(int i=0;i<=j;i++){
             if(arr[i]!=arr[j]){
